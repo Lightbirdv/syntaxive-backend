@@ -1,0 +1,15 @@
+POST https://localhost:8080/authenticate/tokenBasic HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "Testuser",
+    "password": "password"
+}
+###
+#Login as Administrator with Basic Token
+POST https://localhost:8080/authenticate/loginBasic
+Authorization: Basic VGVzdHVzZXI6cGFzc3dvcmQ=
+
+###
+POST https://localhost:8080/authenticate/token
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiVGVzdHVzZXIiLCJpYXQiOjE2MjIwNTY1MjEsImV4cCI6MTYyMzY3ODg3Nzg2NH0.jRwEXgchCmjN0d4v8gsRzmGv5Ns0hrsoOYQ9ESOl6nE

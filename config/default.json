@@ -1,0 +1,11 @@
+{
+    "db": {
+        "connectionString": "mongodb://localhost/syntaxive",
+        "connectionOptions": {
+            "useNewUrlParser": true,
+            "useUnifiedTopology": true
+        }
+    },
+    "baseurl": "https://localhost:8080"
+}
+    

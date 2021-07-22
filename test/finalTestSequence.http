@@ -1,0 +1,66 @@
+###
+#Use this endpoint to generate Basic Token from admin instead of relying on tool
+#testing only
+POST https://localhost:8080/authenticate/tokenBasic HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "123"
+}
+###
+#Login as Administrator with Basic Token
+POST https://localhost:8080/authenticate/loginBasic
+Authorization: Basic YWRtaW46MTIz
+
+###
+#Register a new User no login required for Registration
+POST https://localhost:8080/user/register
+Content-Type: application/json
+
+{
+    "username": "Testuser",
+    "password": "password",
+    "email": "Testest@testmail.com",
+    "preference": "Python, Javascript, Java"
+}
+
+###
+#Get all user with admin authentication Token
+GET https://localhost:8080/user/all
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJpYXQiOjE2MjAyNDQyMjksImV4cCI6MTYyMTg2NDc3Mzc1N30.ZxHhkmTn_eKnVyh1PA4k371665-T09PUy0Sw96Z0SHg
+
+###
+#Register a new group object
+POST https://localhost:8080/group/register
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJpYXQiOjE2MjAyNDQyMjksImV4cCI6MTYyMTg2NDc3Mzc1N30.ZxHhkmTn_eKnVyh1PA4k371665-T09PUy0Sw96Z0SHg
+Content-Type: application/json
+
+{
+    "parameter": "random"
+}
+
+###
+#Get all group objects
+GET https://localhost:8080/group/all
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJpYXQiOjE2MjAyNDQyMjksImV4cCI6MTYyMTg2NDc3Mzc1N30.ZxHhkmTn_eKnVyh1PA4k371665-T09PUy0Sw96Z0SHg
+###
+#Create a post from admin as author in forum
+POST https://localhost:8080/post/register
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJpYXQiOjE2MjAyNDQyMjksImV4cCI6MTYyMTg2NDc3Mzc1N30.ZxHhkmTn_eKnVyh1PA4k371665-T09PUy0Sw96Z0SHg
+Content-Type: application/json
+
+{
+    "titel": "This is quite the test",
+    "content": "wow was ein toller test text",
+    "tag": "java"
+}
+###
+#Get all posts of specific group id
+#id for group "java" 60ad4ad5fc12d02a14ce43b8
+GET https://localhost:8080/group/60ad4ad5fc12d02a14ce43b8/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJpYXQiOjE2MjAyNDQyMjksImV4cCI6MTYyMTg2NDc3Mzc1N30.ZxHhkmTn_eKnVyh1PA4k371665-T09PUy0Sw96Z0SHg
+###
+#List all post object of author
+GET https://localhost:8080/post/author/admin
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJpYXQiOjE2MjAyNDQyMjksImV4cCI6MTYyMTg2NDc3Mzc1N30.ZxHhkmTn_eKnVyh1PA4k371665-T09PUy0Sw96Z0SHg

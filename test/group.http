@@ -1,0 +1,33 @@
+
+#Get all group objects
+GET https://localhost:8080/group/all
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJpYXQiOjE2MjAyNDQyMjksImV4cCI6MTYyMTg2NDc3Mzc1N30.ZxHhkmTn_eKnVyh1PA4k371665-T09PUy0Sw96Z0SHg
+###
+#Register a new group object
+POST https://localhost:8080/group/register
+Content-Type: application/json
+
+{
+    "parameter": "random"
+}
+###
+#Get specific group object with id
+GET https://localhost:8080/group/60ac10bf86179b0cb4e476a2
+###
+#Update specific group object with id
+PATCH https://localhost:8080/group/60ae6ab8b20d451f282e86b0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJpYXQiOjE2MjAyNDQyMjksImV4cCI6MTYyMTg2NDc3Mzc1N30.ZxHhkmTn_eKnVyh1PA4k371665-T09PUy0Sw96Z0SHg
+Content-Type: application/json
+
+{
+    "parameter": "python"
+}
+###
+#Delete specific group object with id
+DELETE https://localhost:8080/group/60ac10bf86179b0cb4e476a2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJpYXQiOjE2MjAyNDQyMjksImV4cCI6MTYyMTg2NDc3Mzc1N30.ZxHhkmTn_eKnVyh1PA4k371665-T09PUy0Sw96Z0SHg
+###
+#Get all posts of specific group id
+GET https://localhost:8080/group/60ad4ad5fc12d02a14ce43b6/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJpYXQiOjE2MjAyNDQyMjksImV4cCI6MTYyMTg2NDc3Mzc1N30.ZxHhkmTn_eKnVyh1PA4k371665-T09PUy0Sw96Z0SHg
+###

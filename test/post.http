@@ -1,0 +1,40 @@
+POST https://localhost:8080/post/register
+Content-Type: application/json
+
+{
+    "titel": "This is quite the test",
+    "content": "wow was ein toller test text",
+    "tag": "nodejs,java"
+}
+###
+#Get all post objects
+GET https://localhost:8080/post/all
+
+###
+#Get all group objects
+GET https://localhost:8080/group/all
+
+###
+#Delete post object
+DELETE https://localhost:8080/post/60ad4b212b18af55740e4a39
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJpYXQiOjE2MjAyNDQyMjksImV4cCI6MTYyMTg2NDc3Mzc1N30.ZxHhkmTn_eKnVyh1PA4k371665-T09PUy0Sw96Z0SHg
+
+###
+#Add comment to post object
+POST https://localhost:8080/post/60e609be06a9c53460d4af5e/comments
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJpYXQiOjE2MjAyNDQyMjksImV4cCI6MTYyMTg2NDc3Mzc1N30.ZxHhkmTn_eKnVyh1PA4k371665-T09PUy0Sw96Z0SHg
+Content-Type: application/json
+
+{
+    "content": "@admin wow toller Kommentar"
+}
+
+###
+#Delete comment of post object
+DELETE https://localhost:8080/post/60ad4b202b18af55740e4a36/comments/60ad57bd46f37107d87d106e
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJpYXQiOjE2MjAyNDQyMjksImV4cCI6MTYyMTg2NDc3Mzc1N30.ZxHhkmTn_eKnVyh1PA4k371665-T09PUy0Sw96Z0SHg
+
+###
+#List all post object of author
+GET https://localhost:8080/post/author/anon
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW4iLCJpYXQiOjE2MjAyNDQyMjksImV4cCI6MTYyMTg2NDc3Mzc1N30.ZxHhkmTn_eKnVyh1PA4k371665-T09PUy0Sw96Z0SHg
